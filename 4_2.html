@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clash Royale — персонажи (Bootstrap версия)</title>
+    <!-- Bootstrap 5 CSS (официальный CDN) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <!-- Дополнительная кастомизация через Bootstrap-переменные и легкие правки (без отключения Bootstrap) -->
+    <style>
+        /* Очень легкие дополнительные штрихи, чтобы тема Clash Royale чувствовалась,
+           но при этом Bootstrap остается основным. Можно удалить без потери сетки. */
+        body {
+            background: #1b2a3f; /* темно-синий фон как в игре */
+        }
+        .clash-header {
+            background: linear-gradient(145deg, #2a3f5e, #0f1e2f);
+            border-bottom: 4px solid #f3b33d;
+        }
+        .clash-card {
+            transition: transform 0.2s;
+            border: 2px solid #4f7a9e;
+        }
+        .clash-card:hover {
+            transform: scale(1.02);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+            border-color: #f9c74f;
+        }
+        .clash-title {
+            color: #ffd966;
+            text-shadow: 2px 2px 0 #3a6ea5;
+        }
+        .clash-badge {
+            background-color: #f3b33d;
+            color: #0a1c2f;
+            font-weight: bold;
+        }
+        footer {
+            background: #0f2635;
+            color: #adc4d4;
+            border-top: 5px solid #f3aa3b;
+        }
+        a {
+            color: #9fd9ff;
+        }
+        a:hover {
+            color: #fca311;
+        }
+        table {
+            background-color: #1e3445;
+            color: white;
+        }
+        th {
+            background-color: #2f5570 !important;
+            color: #ffdd99 !important;
+        }
+        td {
+            background-color: #1f3a4d;
+        }
+    </style>
+</head>
+<body class="text-light" style="background-color: #1b2a3f;">
+
+    <!-- ШАПКА САЙТА (header) -->
+    <header class="clash-header container-fluid rounded-bottom-4 py-4 px-4 px-md-5 mb-5">
+        <div class="container">
+            <h1 class="display-2 text-center clash-title fw-bold">👑 Clash Royale</h1>
+            <p class="text-center fs-4 text-warning-emphasis">Персонажи, статистика и ссылки</p>
+
+            <!-- Навигация (меню) с Bootstrap Nav -->
+            <nav class="navbar navbar-expand-lg navbar-dark mt-4 rounded-4 p-3" style="background: rgba(0,0,0,0.5);">
+                <div class="container-fluid">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item"><a class="nav-link" href="#common">Обычные</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#rare">Редкие</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#epic">Эпические</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#table-section">Таблица</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#gallery">Галерея</a></li>
+                        </ul>
+                        <span class="navbar-text text-warning">⚡ версия Bootstrap</span>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Внешние ссылки (на другие сайты) в стиле Bootstrap -->
+            <div class="d-flex flex-wrap justify-content-center gap-3 mt-4 p-3 bg-dark bg-opacity-50 rounded-5">
+                <span class="text-white-50 fw-bold">Полезные ресурсы:</span>
+                <a href="https://clashroyale.fandom.com/wiki/Clash_Royale_Wiki" target="_blank" class="btn btn-outline-warning btn-sm">Фандом вики</a>
+                <a href="https://royaleapi.com/" target="_blank" class="btn btn-outline-warning btn-sm">RoyaleAPI</a>
+                <a href="https://deckshop.pro" target="_blank" class="btn btn-outline-warning btn-sm">Deck Shop</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Основное содержимое (main) используем контейнер Bootstrap -->
+    <main class="container my-5">
+
+        <!-- Секция 1: Обычные персонажи (сетка + карточки) -->
+        <section id="common" class="mb-5">
+            <h2 class="display-5 clash-title border-start border-5 border-warning ps-4 mb-4">🍎 Обычные персонажи (Common)</h2>
+            <p class="lead">Этих ребят можно встретить в любой колоде. Вот они:</p>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <!-- Нумерованный список с Bootstrap group -->
+                    <ol class="list-group list-group-numbered bg-transparent">
+                        <li class="list-group-item bg-dark text-white border-warning">Рыцарь — сбалансированный боец ближнего боя.</li>
+                        <li class="list-group-item bg-dark text-white border-warning">Бомбардир — кидает бомбы, любит толпы врагов.</li>
+                        <li class="list-group-item bg-dark text-white border-warning">Гоблины с копьями — дальний бой, быстрые.</li>
+                        <li class="list-group-item bg-dark text-white border-warning">Приспешники — летают и кусаются.</li>
+                        <li class="list-group-item bg-dark text-white border-warning">Скелеты — один эликсир, куча трупов.</li>
+                    </ol>
+                </div>
+                <div class="col-md-6">
+                    <!-- Картинка с Bootstrap классами -->
+                    <img src="https://via.placeholder.com/300x150/FFD700/000000?text=Рыцарь+и+компания" alt="Обычные персонажи" class="img-fluid rounded-4 border border-4 border-warning shadow-lg">
+                    <p class="mt-2 fst-italic text-secondary">Примерное изображение обычных персонажей (заглушка)</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Секция 2: Редкие персонажи -->
+        <section id="rare" class="mb-5">
+            <h2 class="display-5 clash-title border-start border-5 border-info ps-4 mb-4">🔷 Редкие персонажи (Rare)</h2>
+            <div class="row g-4">
+                <div class="col-md-7">
+                    <ul class="list-group bg-transparent">
+                        <li class="list-group-item bg-dark text-white border-info"><strong>Валькирия:</strong> крутится как вихрь.</li>
+                        <li class="list-group-item bg-dark text-white border-info"><strong>Гигант:</strong> танк, бьёт по зданиям.</li>
+                        <li class="list-group-item bg-dark text-white border-info"><strong>Мушкетёр:</strong> девушка с винтовкой.</li>
+                        <li class="list-group-item bg-dark text-white border-info"><strong>Дровосек:</strong> бешеный гном с топором.</li>
+                        <li class="list-group-item bg-dark text-white border-info"><strong>Дымоход:</strong> здание, спаунит яйца.</li>
+                    </ul>
+                </div>
+                <div class="col-md-5">
+                    <img src="https://via.placeholder.com/300x150/1E90FF/ffffff?text=Гигант+и+Валькирия" alt="Редкие персонажи" class="img-fluid rounded-4 border border-4 border-info">
+                </div>
+            </div>
+        </section>
+
+        <!-- Секция 3: Эпические и легендарные (список определений) -->
+        <section id="epic" class="mb-5">
+            <h2 class="display-5 clash-title border-start border-5 border-purple ps-4 mb-4" style="border-color: #b685e6;">💜 Эпические и легендарные</h2>
+            <div class="row">
+                <div class="col-lg-8">
+                    <dl class="row bg-dark p-4 rounded-4">
+                        <dt class="col-sm-4 text-warning">⚡ Принц (Epic)</dt>
+                        <dd class="col-sm-8">Кавалерист с копьём, двойной урон при разгоне.</dd>
+                        <dt class="col-sm-4 text-warning">🐉 Печка (Legendary)</dt>
+                        <dd class="col-sm-8">Маленький дракон, после смерти — яйцо.</dd>
+                        <dt class="col-sm-4 text-warning">🦇 Ночная ведьма (Legendary)</dt>
+                        <dd class="col-sm-8">Призывает летучих мышей.</dd>
+                        <dt class="col-sm-4 text-warning">⚙️ Мегарыцарь (Legendary)</dt>
+                        <dd class="col-sm-8">Прыгает на голову врагу.</dd>
+                    </dl>
+                </div>
+                <div class="col-lg-4">
+                    <img src="https://via.placeholder.com/300x150/9400D3/ffffff?text=Мегарыцарь" alt="Легендарные" class="img-fluid rounded-4 border border-4 border-light">
+                </div>
+            </div>
+        </section>
+
+        <!-- Таблица с характеристиками (Bootstrap table) -->
+        <section id="table-section" class="mb-5">
+            <h2 class="display-5 clash-title border-start border-5 border-success ps-4 mb-4">📊 Сравнительная таблица</h2>
+            <div class="table-responsive">
+                <table class="table table-dark table-striped table-bordered border-warning">
+                    <caption class="text-warning text-center">Основные параметры бойцов</caption>
+                    <thead>
+                        <tr>
+                            <th>Имя</th>
+                            <th>Редкость</th>
+                            <th>Эликсир</th>
+                            <th>Тип урона</th>
+                            <th>Скорость атаки</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Рыцарь</td><td>Обычный</td><td>3</td><td>Наземный</td><td>1.1 сек</td></tr>
+                        <tr><td>Валькирия</td><td>Редкий</td><td>4</td><td>Наземный (область)</td><td>1.6 сек</td></tr>
+                        <tr><td>Мегарыцарь</td><td>Легендарный</td><td>7</td><td>Прыжок</td><td>1.7 сек</td></tr>
+                        <tr><td>Принц</td><td>Эпический</td><td>5</td><td>Рывок</td><td>1.5 сек</td></tr>
+                        <tr><td>Мушкетёр</td><td>Редкий</td><td>4</td><td>Дальний</td><td>1.1 сек</td></tr>
+                    </tbody>
+                    <tfoot class="table-secondary">
+                        <tr><td colspan="5" class="text-center">*данные приблизительные</td></tr>
+                    </tfoot>
+                </table>
+            </div>
+        </section>
+
+        <!-- Галерея картинок (ссылки на изображения) -->
+        <section id="gallery" class="mb-5">
+            <h2 class="display-5 clash-title border-start border-5 border-danger ps-4 mb-4">🖼️ Картинки (ссылки)</h2>
+            <div class="list-group">
+                <a href="https://static.wikia.nocookie.net/clashroyale/images/8/84/Knight.png" target="_blank" class="list-group-item list-group-item-action bg-dark text-white border-warning">Рыцарь — прямая ссылка на PNG</a>
+                <a href="https://static.wikia.nocookie.net/clashroyale/images/1/17/Valkyrie.png" target="_blank" class="list-group-item list-group-item-action bg-dark text-white border-warning">Валькирия — прямая ссылка</a>
+                <a href="https://static.wikia.nocookie.net/clashroyale/images/6/6b/Mega_Knight.png" target="_blank" class="list-group-item list-group-item-action bg-dark text-white border-warning">Мегарыцарь — картинка</a>
+                <a href="https://static.wikia.nocookie.net/clashroyale/images/3/38/Prince.png" target="_blank" class="list-group-item list-group-item-action bg-dark text-white border-warning">Принц — изображение</a>
+            </div>
+            <p class="mt-3">🔗 Также <a href="https://supercell.com/en/games/clashroyale/" target="_blank" class="link-warning">официальный сайт Clash Royale</a>.</p>
+            <img src="https://static.wikia.nocookie.net/clashroyale/images/c/cb/Spear_Goblins.png" alt="Гоблины с копьями" class="img-fluid rounded-4 mt-3 border border-4 border-warning" style="max-width: 200px;">
+        </section>
+    </main>
+
+    <!-- Боковая панель (aside) с использованием колонок Bootstrap -->
+    <aside class="container my-5">
+        <div class="row g-4 p-4 bg-dark bg-opacity-75 rounded-5">
+            <div class="col-md-4">
+                <h3 class="text-warning">📌 Ещё ссылки</h3>
+                <ul class="list-unstyled">
+                    <li><a href="https://www.deckshop.pro/top-decks" class="text-info">Топ колоды</a></li>
+                    <li><a href="https://clashroyale.fandom.com/wiki/Cards" class="text-info">Все карты на Fandom</a></li>
+                    <li><a href="https://www.youtube.com/results?search_query=clash+royale+guides" class="text-info">Гайды YouTube</a></li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <h3 class="text-warning">🏆 Топ-5 для новичков</h3>
+                <ol class="list-group list-group-numbered bg-transparent">
+                    <li class="list-group-item bg-dark text-white">Рыцарь</li>
+                    <li class="list-group-item bg-dark text-white">Ведьма скелетов</li>
+                    <li class="list-group-item bg-dark text-white">Гоблины-бандиты</li>
+                    <li class="list-group-item bg-dark text-white">Зажигатель</li>
+                    <li class="list-group-item bg-dark text-white">Дракон</li>
+                </ol>
+            </div>
+            <div class="col-md-4">
+                <h3 class="text-warning">💪 Здоровье (14 ур.)</h3>
+                <table class="table table-sm table-dark">
+                    <tr><th>Персонаж</th><th>ХП</th></tr>
+                    <tr><td>Рыцарь</td><td>2016</td></tr>
+                    <tr><td>Мегарыцарь</td><td>4416</td></tr>
+                    <tr><td>Валькирия</td><td>2544</td></tr>
+                </table>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Подвал сайта (footer) -->
+    <footer class="container-fluid py-5 mt-5">
+        <div class="container text-center">
+            <hr class="border border-warning border-2 opacity-50">
+            <p>© 2025 Фан-сайт Clash Royale. Персонажи принадлежат Supercell.</p>
+            <p class="d-flex flex-wrap justify-content-center gap-3">
+                <a href="https://supercell.com" target="_blank" class="badge bg-warning text-dark p-3">Supercell</a>
+                <a href="https://www.reddit.com/r/ClashRoyale/" target="_blank" class="badge bg-warning text-dark p-3">Reddit</a>
+                <a href="https://twitter.com/ClashRoyale" target="_blank" class="badge bg-warning text-dark p-3">Twitter</a>
+            </p>
+            <a href="https://clashroyale.com" target="_blank">
+                <img src="https://via.placeholder.com/100x50/FF0000/FFFFFF?text=Clash+Logo" alt="лого" class="img-fluid rounded-3 border border-3 border-warning mt-3" width="100">
+            </a>
+            <p class="mt-2 small">кликните на логотип, чтобы перейти на официальный сайт</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS (для работы навигации и других компонентов) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>

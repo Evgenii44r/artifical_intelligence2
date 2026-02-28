@@ -1,0 +1,464 @@
+/* style.css — полное оформление для сайта о Clash Royale */
+
+/* ===== ОБНУЛЕНИЕ И БАЗОВЫЕ НАСТРОЙКИ ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
+    background: linear-gradient(145deg, #1a2639 0%, #0d1b2a 100%);
+    color: #e0e1dd;
+    line-height: 1.6;
+    padding: 20px;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+/* ===== ТИПОГРАФИКА И ЗАГОЛОВКИ ===== */
+h1 {
+    font-size: 2.8rem;
+    text-align: center;
+    margin: 20px 0 30px;
+    text-shadow: 4px 4px 0 #3a6ea5, 6px 6px 0 #0b3b5c;
+    color: #ffd966;
+    letter-spacing: 2px;
+    word-break: break-word;
+}
+
+h2 {
+    font-size: 2.2rem;
+    border-left: 8px solid #f7b731;
+    padding-left: 25px;
+    margin: 40px 0 25px;
+    color: #ffb347;
+    background: linear-gradient(to right, #2a3a4f, transparent);
+}
+
+h3 {
+    font-size: 1.8rem;
+    color: #a9d6e5;
+    margin: 30px 0 15px;
+}
+
+h4 {
+    font-size: 1.4rem;
+    color: #f8c7a2;
+    margin: 20px 0 10px;
+}
+
+/* ===== ШАПКА И НАВИГАЦИЯ ===== */
+header {
+    background: rgba(10, 25, 47, 0.9);
+    border-radius: 30px 30px 15px 15px;
+    padding: 25px 30px;
+    margin-bottom: 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7), 0 0 0 2px #4a6fa5 inset;
+}
+
+nav {
+    margin-top: 25px;
+}
+
+nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px 25px;
+    list-style: none;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+nav ul li a {
+    background: #2c3e50;
+    padding: 12px 25px;
+    border-radius: 40px;
+    font-weight: bold;
+    color: #f8f9fa;
+    text-decoration: none;
+    border: 2px solid #5fa8d3;
+    transition: all 0.2s;
+    display: inline-block;
+}
+
+nav ul li a:hover {
+    background: #f7b731;
+    color: #0a1c2f;
+    border-color: #ffd966;
+    transform: scale(1.05);
+    box-shadow: 0 0 15px #f7b731;
+}
+
+/* Ссылки на внешние ресурсы в шапке */
+nav p {
+    text-align: center;
+    font-size: 1.2rem;
+    background: #1e2f41;
+    padding: 15px;
+    border-radius: 50px;
+}
+
+nav p a {
+    color: #b8e2f2;
+    margin: 0 10px;
+    padding: 5px 10px;
+    border-radius: 20px;
+    background: #0f2a3f;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+nav p a:hover {
+    background: #f7b731;
+    color: black;
+}
+
+/* ===== ССЫЛКИ (ОБЩЕЕ) ===== */
+a {
+    color: #9fd9ff;
+    transition: 0.2s;
+}
+
+a:hover {
+    color: #fca311;
+    text-decoration: underline;
+}
+
+/* ===== СЕКЦИИ ===== */
+section {
+    background: rgba(27, 38, 59, 0.8);
+    backdrop-filter: blur(3px);
+    border-radius: 40px;
+    padding: 30px 35px;
+    margin: 40px 0;
+    box-shadow: 0 20px 30px -8px black, 0 0 0 1px #3e6b8c;
+    border: 1px solid #5f8db0;
+}
+
+/* ===== СПИСКИ (ПЕРЕЧИСЛЕНИЯ) ===== */
+ul, ol {
+    margin: 15px 0 20px 35px;
+    font-size: 1.2rem;
+}
+
+li {
+    margin: 10px 0;
+    padding-left: 8px;
+}
+
+ul li::marker {
+    color: #ffb347;
+    content: "⚔️ ";
+}
+
+ol li::marker {
+    color: #f7d44e;
+    font-weight: bold;
+}
+
+dl {
+    background: #1b2a41;
+    padding: 25px;
+    border-radius: 30px;
+    border-left: 6px solid #fea918;
+}
+
+dt {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #f9c74f;
+    margin-top: 15px;
+}
+
+dd {
+    margin-left: 35px;
+    color: #cfdbd5;
+    font-style: italic;
+}
+
+/* ===== ТАБЛИЦЫ ===== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 1.1rem;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+caption {
+    font-size: 1.3rem;
+    font-weight: bold;
+    background: #2f4858;
+    padding: 12px;
+    border-radius: 15px 15px 0 0;
+    color: #f1e9db;
+}
+
+th {
+    background: #3a5f73;
+    color: #ffdd99;
+    font-size: 1.2rem;
+    padding: 15px 8px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+td {
+    background: #1e2f3f;
+    padding: 12px 8px;
+    border-bottom: 1px solid #46657a;
+    color: #e9f0f5;
+}
+
+tfoot td {
+    background: #0f2635;
+    font-style: italic;
+    color: #abb9c9;
+    text-align: center;
+}
+
+/* Чётные строки для читаемости */
+tbody tr:nth-child(even) td {
+    background: #253b4b;
+}
+
+/* ===== ИЗОБРАЖЕНИЯ ===== */
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 20px;
+    border: 4px solid #f7b731;
+    box-shadow: 0 10px 25px black;
+    margin: 20px 0;
+    transition: 0.3s;
+    display: block;
+}
+
+img:hover {
+    transform: scale(1.02);
+    border-color: #ffe484;
+    box-shadow: 0 0 25px #f5b342;
+}
+
+/* ===== ГАЛЕРЕЯ ССЫЛОК НА КАРТИНКИ ===== */
+#gallery ul {
+    list-style-type: none;
+    margin-left: 0;
+}
+
+#gallery ul li {
+    background: #1e3a4d;
+    margin: 15px 0;
+    padding: 18px 25px;
+    border-radius: 60px;
+    border: 2px solid #e9b741;
+    font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+#gallery ul li::before {
+    content: "🖼️";
+    margin-right: 12px;
+    font-size: 1.6rem;
+}
+
+#gallery ul li a {
+    background: #0d2e40;
+    padding: 8px 20px;
+    border-radius: 30px;
+    text-decoration: none;
+    color: #f7d794;
+    font-weight: bold;
+    border: 1px solid #eba834;
+}
+
+#gallery ul li a:hover {
+    background: #eba834;
+    color: black;
+}
+
+/* ===== ASIDE (БОКОВАЯ ПАНЕЛЬ) ===== */
+aside {
+    background: #102331;
+    border-radius: 50px 50px 20px 20px;
+    padding: 30px;
+    margin: 50px 0 30px;
+    border: 3px solid #7a9eb3;
+    box-shadow: 0 0 30px #1c405b inset;
+}
+
+aside ul, aside ol {
+    margin-left: 25px;
+}
+
+aside h4 {
+    color: #f9bc60;
+}
+
+/* Таблица внутри aside (компактная) */
+aside table {
+    font-size: 1rem;
+    width: auto;
+    min-width: 60%;
+}
+
+aside table th {
+    background: #2d4b63;
+    padding: 10px;
+}
+
+aside table td {
+    background: #1a3142;
+}
+
+/* ===== ПОДВАЛ (FOOTER) ===== */
+footer {
+    background: #0b1b28;
+    border-radius: 30px 30px 50px 50px;
+    padding: 30px 35px;
+    margin-top: 60px;
+    text-align: center;
+    border-top: 6px solid #f3aa3b;
+    color: #afc9da;
+}
+
+footer hr {
+    border: none;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #f5b342, transparent);
+    margin: 20px 0;
+}
+
+footer p {
+    margin: 15px 0;
+}
+
+footer a {
+    color: #fcb375;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 0 8px;
+}
+
+footer a:hover {
+    color: #ffdd99;
+    text-decoration: underline wavy #ffb347;
+}
+
+footer img {
+    display: inline-block;
+    margin: 20px auto 5px;
+    border-width: 3px;
+}
+
+footer small {
+    display: block;
+    margin-top: 15px;
+    opacity: 0.8;
+}
+
+/* ===== СПЕЦИАЛЬНЫЕ ЭЛЕМЕНТЫ ===== */
+/* Класс для цитат / дополнительного текста */
+i, em {
+    color: #c5cbd3;
+    background: #16222e;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-style: italic;
+    display: inline-block;
+}
+
+strong {
+    color: #f5bd62;
+}
+
+/* Якорные ссылки: плавная прокрутка */
+html {
+    scroll-behavior: smooth;
+}
+
+/* ===== АДАПТАЦИЯ ПОД ТЕЛЕФОНЫ ===== */
+@media (max-width: 700px) {
+    body {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+        padding-left: 15px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    nav ul li a {
+        text-align: center;
+        display: block;
+    }
+
+    section, aside, header {
+        padding: 20px 15px;
+    }
+
+    table {
+        font-size: 0.9rem;
+    }
+
+    th, td {
+        padding: 8px 4px;
+    }
+
+    #gallery ul li {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    #gallery ul li::before {
+        margin-right: 0;
+    }
+}
+
+/* ===== АНИМАЦИИ ДЛЯ КАРТОЧЕК ПЕРСОНАЖЕЙ ===== */
+/* Добавляем мини-эффект при наведении на секции */
+section:hover {
+    box-shadow: 0 0 25px #5588a3, 0 0 0 2px #f5b342;
+    transition: 0.2s;
+}
+
+/* Красивые буллиты для особых списков */
+nav ul li a::before {
+    content: "⚡";
+    margin-right: 6px;
+    color: #ffe066;
+}
+
+/* ===== ДОПОЛНИТЕЛЬНЫЕ ШТРИХИ ===== */
+/* Рамка для важных ссылок */
+nav p a {
+    box-shadow: 0 2px 0 #3e6b8c;
+}
+
+/* Стили для картинок, которые являются ссылками */
+a img {
+    border-radius: 30px;
+}
+
+a:hover img {
+    border-color: #ffa200;
+    filter: brightness(1.1);
+}
+
+/* Конец файла стилей — всё выглядит ярко и по-королевски */
